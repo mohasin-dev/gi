@@ -1,0 +1,21 @@
+/**
+ * All the styles of the App.
+ */
+
+// Our own variables
+@import "./variables";
+// fonts are using
+@import "./fonts";
+// responsive styles
+@import "./responsive";
+
+/******************************************************
+ *
+ * START STYLING
+ *
+ ******************************************************/
+
+.test-class {
+    color: $dark-blue;
+    background-color: $gray;
+}
