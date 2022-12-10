@@ -13,7 +13,7 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-
+import {VueRecaptcha} from 'vue-recaptcha'
 const vuetify = createVuetify({
     components,
     directives,
@@ -29,7 +29,7 @@ const app = createApp({});
 
 import AppComponent from './components/AppComponent.vue';
 app.component('example-component', AppComponent);
-
+app.component('vue-recaptcha' , VueRecaptcha);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -47,5 +47,5 @@ app.component('example-component', AppComponent);
  * an "id" attribute of "app". This element is included with the "auth"
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
-
+console.log(vuetify);
 app.use(vuetify).use(router).mount('#app');

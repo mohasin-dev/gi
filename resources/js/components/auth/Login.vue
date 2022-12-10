@@ -8,6 +8,12 @@
                     <div class="card-body">
                         I'm an login component.
                     </div>
+                    <v-card>
+                        <v-card-title>Cafe Badilico</v-card-title>
+                        <v-card-text>
+                            dfgdfgdf
+                        </v-card-text>
+                    </v-card>
                     <router-link to="/register">Register</router-link>
                 </div>
             </div>

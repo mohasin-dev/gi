@@ -1,0 +1,196 @@
+/* register */
+
+.top-logo .logo-powered-by{
+    color: #052c65;
+    position: relative;
+}
+.powerby-text{  
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+    top: 3%;
+}
+.logo-powered-by .company-text{
+    font-size: 60px;
+    font-weight: 500;
+    font-family: auto;
+    padding-right: 10px;
+}
+.company-slogan-text{
+    font-weight: 500;
+    padding-top: 20px;
+    padding-left: 10px;
+    line-height: 1;
+    position: relative;
+}
+.top-divider{
+    height: 55%;
+    background: #0000004f;
+    position: absolute;
+    width: 1px;
+    left: 0;
+}
+.top-logo .logo img{
+    height: 50px;
+    padding-left: 35px;
+}
+/* step css */
+.step-container{
+
+}
+.step-container .step-reg:first-child{
+    width: 184px;
+    height: 90px;
+    margin-right: 0;
+    padding: 20px 0px;
+    padding-right: 12px;
+    background-color: #e1e1e1;
+    /* border: 1px solid #c5d7f3; */
+    clip-path: polygon(0% 0%, 93% 0%, 100% 50%, 93% 100%, 0% 100%);
+    position: relative;
+}
+.step-container .step-reg:first-child:before{
+    width: 182px;
+    height: 88px;
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    content: '';
+    background-color: #F6FAFF;
+    clip-path: polygon(0% 0%, 93% 0%, 100% 50%, 93% 100%, 0% 100%);
+    z-index: -1;
+}
+.step-container .step-reg{
+    text-align: center;
+    width: 184px;
+    height: 90px;
+    margin-right: 0;
+    padding: 20px 0px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: #e1e1e1;
+    /* border: 1px solid #c5d7f3; */
+    clip-path: polygon(93% 1%, 100% 50%, 93% 100%, 0% 100%, 7% 50%, 0% 0%);
+    position: relative;
+}
+.step-container .step-reg:before{
+    width: 182px;
+    height: 88px;
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    content: '';
+    background-color: #F6FAFF;
+    clip-path: polygon(93% 1%, 100% 50%, 93% 100%, 0% 100%, 7% 50%, 0% 0%);
+    z-index: -1;
+}
+.step-container .step-reg p{
+    margin: 0;
+}
+.step-container .step-reg p:first-child{
+    font-weight: 500;
+    font-size: 20px;
+    color: #3475d9;
+    /* letter-spacing: 2px; */
+    text-transform: uppercase;
+}
+.step-container .step-reg p:last-child{
+    margin: 0;
+    font-size: 14px;
+    color: #484848;
+}
+.step-container .step-reg.step-active:before{
+    width: 176px;
+    height: 82px;
+    top:4px;
+    left:4px;
+}
+
+/* end step css */
+
+/* form css */
+.form-section{
+    border: 1px solid #a59f9f;
+    border-radius: 5px;
+    padding: 51px;
+    max-width: 750px;
+    margin: auto;
+}
+.form-title h5{
+    margin: 0;
+    color: #3475d9;
+    font-size: 20px;
+    font-weight: 500;
+}
+.form-title .title-bottom-bar{
+  
+    border-bottom: 1px dashed #a59f9f;
+    margin-left: 10px;
+}
+/* .form-floating>.form-control, .form-floating>.form-control-plaintext, .form-floating>.form-select{
+    height: calc(2.5rem + 2px);
+}
+.form-floating>label{
+    padding: 7px 0.75rem;
+}
+.form-container .form-control{
+    border: 1px solid #ced4da;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 0;
+}
+.form-container .form-floating>label{
+ color: #817171;
+ font-size: 13px;
+}
+*/
+.form-container .already-acount{
+    text-align: right;
+}
+.form-container .already-acount p{
+    margin: 0;
+    color: #817171;
+    font-size: 13px;
+}
+.form-container .already-acount a{
+    text-decoration: none;
+    font-weight: 700;
+}
+.form-container .next-button{
+    padding: 5px 50px !important;
+    border-radius: 3px !important;
+    background-color: #0d6efd!important;
+    color:#fff!important;
+}
+.form-container .back-button{
+    padding: 5px 40px;
+    background-color: #fff!important;
+    color:#0d6efd!important;
+    border: 1px solid #0d6efd;
+} 
+.v-field--variant-filled .v-field__overlay {
+    background-color: #fff!important;
+}
+div[aria-required=true].v-input .v-label::after {
+    content: " *";
+    color: red;
+}
+.eye-show{
+    position: relative;
+}
+.eye-show .v-input__append{
+    position: absolute;
+    right: 0;
+}
+.show-section{
+    display: block;
+}
+.hide-section{
+    display: none;
+}
+/* end form css */
