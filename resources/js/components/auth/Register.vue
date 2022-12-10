@@ -361,6 +361,7 @@
 
 <script>
     export default {
+        name:"register",
         data () {
             return {
                 step:1,
