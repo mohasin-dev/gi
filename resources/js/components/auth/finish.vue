@@ -77,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <v-card class="mx-auto form-container success-step " width="450px">
+            <v-card class="mx-auto form-container success-step " width="90%">
                 <v-card-text>
                     <h3 class="mb-6 text-center">Congratulations</h3>
                     <p class="mb-6 text-center">Your registration has been submitted successfully.</p>
@@ -89,7 +89,7 @@
                         <v-btn
                         class="next-button"
                         color="blue-grey"
-                        @click="step++"
+                        href="/"
                         >
                             Return to Sign In Page
                         </v-btn>

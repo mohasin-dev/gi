@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-section">
+        <div class="form-section step3-form">
             <div class="form-title d-flex">
                 <h5>Markets</h5>
                 <div style="width: 86%;" class="title-bottom-bar"></div>
@@ -67,26 +67,29 @@
                         </div>
                         <v-row>
                             
-                            <v-col col="12" md="6">
+                            <v-col cols="12" md="6">
                                 <div class="text-end">
-                                    <v-btn class="select-all-btn" variant="plain">Select All</v-btn>
+                                    <v-btn class="select-all-btn" @click="addAllSeccondList()" variant="plain">Select All</v-btn>
                                 </div>
                                
                                 <v-card
                                     
                                     max-width="300"
                                     v-scroll.self="onScroll"
-                                    class="overflow-y-auto custom-scroll-design leftside-scroll"
+                                    class="overflow-y-auto custom-scroll-design leftside-scroll mx-auto"
                                     max-height="300"
+                                    height="300"
                                 >
                                     <v-list>
                                         <v-list-item
                                             v-for="item in items"
-                                            :key="item.title"
-                                            :title="item.title"
+                                            :key="item.name"
+                                            :title="item.name"
                                         >
                                             <template v-slot:append>
                                                 <v-btn
+                                                    @click="addSeccondList(item)"
+                                                    :style="'display:'+(item.is_plus == 1 ? 'block' : 'none')"
                                                     height="20px"
                                                     width="20px"
                                                     color="grey-lighten-1"
@@ -99,22 +102,24 @@
                                     </v-list>
                                 </v-card>
                             </v-col>
-                            <v-col col="12" md="6">
+                            <v-col cols="12" md="6">
                                 <v-card
                                     
                                     max-width="300"
                                     v-scroll.self="onScroll"
-                                    class="overflow-y-auto custom-scroll-design rightside-scroll"
+                                    class="overflow-y-auto custom-scroll-design rightside-scroll mx-auto"
                                     max-height="300"
+                                    height="300"
                                 >
                                     <v-list>
                                         <v-list-item
-                                            v-for="item in items"
-                                            :key="item.title"
-                                            :title="item.title"
+                                            v-for="item in items2"
+                                            :key="item.name"
+                                            :title="item.name"
                                         >
                                             <template v-slot:append>
                                                 <v-btn
+                                                    @click="removeSeccondList(item)"
                                                     height="20px"
                                                     width="20px"
                                                     color="grey-lighten-1"
@@ -129,26 +134,24 @@
                             </v-col>
                             <v-col
                             class="text-start"
-                            cols="12"
-                            md="6"
+                            cols="6"
                             >
                                 <v-btn
                                 class="back-button"
                                 color="blue-grey"
-                                @click=""
+                                href="/register/step2"
                                 >
                                     Back
                                 </v-btn>
                             </v-col>
                             <v-col
                             class="text-end"
-                            cols="12"
-                            md="6"
+                            cols="6"
                             >
                                 <v-btn
                                 class="next-button"
                                 color="blue-grey"
-                                @click="step++"
+                                href="/register/step4"
                                 >
                                     Next
                                 </v-btn>
@@ -174,54 +177,55 @@
                 items: [
                     
                     {
-                        title: 'Connectiout',
-                        value: 1,
-                        props: {
-                            appendIcon: 'mdi-plus',
-                        },
+                        name: 'Connectiout',
+                        id: 1,
+                        is_plus:0
                     },
                     {
-                        title: 'Delware',
-                        value: 2,
-                        props: {
-                            appendIcon: 'mdi-plus',
-                        },
+                        name: 'Delware',
+                        id: 2,
+                        is_plus:0
                     },
                     {
-                        title: 'District Of Columbia',
-                        value: 3,
-                        props: {
-                            appendIcon: 'mdi-plus',
-                        },
+                        name: 'District Of Columbia',
+                        id: 3,
+                        is_plus:1
                     },
                     {
-                        title: 'Florida',
-                        value: 4,
-                        props: {
-                            appendIcon: 'mdi-plus',
-                        },
+                        name: 'Florida',
+                        id: 4,
+                        is_plus:1
                     },
                     {
-                        title: 'Georgia',
-                        value: 5,
-                        props: {
-                            appendIcon: 'mdi-plus',
-                        },
+                        name: 'Georgia',
+                        id: 5,
+                        is_plus:1
                     },
                     {
-                        title: 'Hawaii',
-                        value: 6,
-                        props: {
-                            appendIcon: 'mdi-plus',
-                        },
+                        name: 'Hawaii',
+                        id: 6,
+                        is_plus:1
                     },
                     {
-                        title: 'Florida2',
-                        value: 7,
-                        props: {
-                            appendIcon: 'mdi-plus',
-                        },
+                        name: 'Florida2',
+                        id: 7,
+                        is_plus:1
                     },
+                    
+                ],
+                items2: [
+                    
+                    {
+                        name: 'Connectiout',
+                        id: 1,
+                        
+                    },
+                    {
+                        name: 'Delware',
+                        id: 2,
+                       
+                    },
+                    
                     
                 ],
             }
@@ -233,6 +237,30 @@
             onScroll () {
                 
             },
+            removeSeccondList(r_item){
+                const item2index = this.items2.findIndex(item => {
+                        return (r_item.id === item.id)
+                        });
+                const itemindex = this.items.findIndex(item => {
+                    return (r_item.id === item.id)
+                    });
+                this.items2.splice(item2index, 1)
+                this.items[itemindex].is_plus=1;
+            },
+            addSeccondList(a_item){
+                const itemindex = this.items.findIndex(item => {
+                    return (a_item.id === item.id)
+                    });
+                this.items[itemindex].is_plus=0;
+                this.items2.push({ id: a_item.id,name:a_item.name });
+            },
+            addAllSeccondList(){
+                for (var i = 0; i < this.items.length; i++){
+                    this.items[i].is_plus=0;
+                    this.items2.push({ id: this.items[i].id,name:this.items[i].name });
+                }
+               
+            }
         },
     }
 </script>

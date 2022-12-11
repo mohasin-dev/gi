@@ -159,6 +159,12 @@
 .v-field--variant-filled .v-field__overlay {
     background-color: #fff!important;
 }
+.state-field .v-field__outline{
+    display: none;
+}
+.state-field .v-input__control{
+    border: 1px solid #787575;
+}
 div[aria-required=true].v-input .v-label::after {
     content: " *";
     color: red;
@@ -503,3 +509,193 @@ div[aria-required=true].v-input .v-label::after {
     height: 35px;
   }
 /* end login */
+
+
+
+
+
+
+
+/* responsive */
+  /* register */
+  @media (max-width:959px) and (min-width:600px){
+    .form-section{
+        max-width: 80%;
+    }
+    .step-container .step-reg:first-child{
+        width: 125px;
+        height: 80px;
+        padding: 5px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .step-container .step-reg:first-child::before{
+        width: 123px;
+        height: 78px;
+    }
+    .step-container .step-reg{
+        padding: 5px 0px;
+        width: 125px;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .step-container .step-reg::before{
+        width: 123px;
+        height: 78px;
+    }
+    .step-container .step-reg p:first-child{
+        font-size: 15px;
+    }
+    .step-container .step-reg p:last-child{
+        font-size: 12px;
+    } 
+
+    .step2-form .v-input__details{
+        display: none;
+    }
+    .step2-form .v-col-12{
+        padding-top:0;
+        padding-bottom:0;
+    }
+    .form-section.step3-form{
+        padding: 10px;
+    }
+    .trade-option .v-input {
+        padding: 0px 35px;
+    }
+    .step4-container{
+        margin: 0 20px!important;
+    }
+  }
+
+  @media (max-width:600px){
+ 
+    .logo-powered-by .company-text {
+        font-size: 45px;
+        font-weight: 500;
+        font-family: auto;
+        padding-right: 5px;
+    }
+    .company-slogan-text {
+        font-weight: 400;
+        padding-top: 15px;
+        padding-left: 10px;
+        line-height: 1;
+        position: relative;
+        font-size: 13px;
+    }
+    .powerby-text {
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        left: 0;
+        font-size: 10px;
+        top: -2%;
+    }
+    .top-logo .logo img {
+        height: 35px;
+        padding-left: 20px;
+    }
+    .form-section{
+        max-width: 80%;
+        padding: 10px;
+    }
+    .step-container .step-reg:first-child{
+        width: 80px;
+        height: 80px;
+        padding: 5px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .step-container .step-reg:first-child::before{
+        width: 78px;
+        height: 78px;
+    }
+    .step-container .step-reg{
+        padding: 5px 0px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .step-container .step-reg::before{
+        width: 78px;
+        height: 78px;
+    }
+    .step-container .step-reg p:first-child{
+        font-size: 15px;
+    }
+    .step-container .step-reg p:last-child{
+        font-size: 12px;
+    }
+    .g_h_capt div:first-child{
+        width: 100% !important;;
+    }
+    .g_h_capt div:first-child div:first-child iframe:first-child{ 
+        width: 100% !important;;
+    }
+    .rc-anchor-pt{
+        display: none;
+    }
+    .step2-form .v-input__details{
+        display: none;
+    }
+    .step2-form .v-col-12{
+        padding:0;
+    }
+
+    .trade-option .trade-switch .v-switch__track {
+        border-radius: 9px!important;
+        height: 20px!important;
+        width: 33px!important;
+        background-color: #97b3d7;
+    }
+    .trade-option .v-input{
+        padding: 0px 5px;
+    }
+    .v-switch .v-label {
+        font-size: 12px;
+    }
+    .custom-title {
+        font-size: 11px;
+    }
+    .step4-container{
+        margin: 0 20px!important;
+    }
+    .form-step4-section .back-button {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    .form-step4-section .next-button {
+        padding: 5px 1px !important;
+    }
+    .form-step4-section .next-button .v-btn__content{
+        font-size: 11px;
+    }
+    .login-left .top-logo h2{
+        letter-spacing: 3px;
+    }
+    .login-right .company-slogan-text {
+        font-size: 21px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 18.5px;
+        padding-top: 21px;
+    }
+    .login-right .logo-powered-by .company-text {
+        font-size: 61px;
+        font-weight: 500;
+        font-family: auto;
+        padding-right: 0px;
+    }
+    .login-right .logo-powered-by{
+        padding-top: 15px;
+    }
+  }
+  /* register */
+/* end responsive */

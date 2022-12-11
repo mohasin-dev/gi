@@ -1,9 +1,9 @@
 <template>
-    <v-container fluid="true">
+    <v-container :fluid="true">
         <v-row>
             <v-col col="12" md="6">
-                <div class="login-left mt-7 px-10 pt-12">
-                    <v-card width="550px" class="mx-auto" style="box-shadow: none;">
+                <div class="login-left mt-7 px-md-10 px-sm-10 px-xs-5 pt-12">
+                    <v-card width="90%" class="mx-auto" style="box-shadow: none;">
                         <v-card-text>
                             <div class="top-logo d-flex align-center mb-4">
                                 <h2>Sign In To</h2>
@@ -47,13 +47,11 @@
                                 </v-container>
                                 <div class="recapcha-section mt-3 mb-8">
                                     <vue-recaptcha
-                                        sitekey="6LcIHmsjAAAAAKuYxuS4jxz5Ggkb_7jvMeU34Onx"
-                                        :loadRecaptchaScript="true"
-                                        ref="recaptcha"
-                                        type="invisible"
-                                        
+                                        sitekey="6LfltW4jAAAAAOtZQT3ah1ZH_7SvGZVjrdeAdLpo"
+                                        ref="recaptcha" @verify="onVerify" @expired="onExpired"   
                                     >
                                     </vue-recaptcha>
+                                    <!-- <button @click="resetRecaptcha">Reset ReCAPTCHA</button> -->
                                 </div>
                                 <div class="submit-btn mt-5">
                                     <div class="d-flex">
@@ -65,6 +63,7 @@
                                         Sign In
                                         </v-btn>
                                         <v-btn
+                                        href="/register"
                                         class="register-btn ml-5"
                                         :rounded="0"
                                         color="primary"
@@ -87,7 +86,7 @@
                         <div class=" d-flex">
                             <div class="company-text">gi  </div>
                         
-                            <div class="company-slogan-text ml-2 pl-6 "> 
+                            <div class="company-slogan-text ml-2 pl-md-6 pl-sm-6 pl-xs-2 "> 
                                 <div class="top-divider" sy></div>
                                 responsible <br> contractor <br> portal
                             </div>   
@@ -105,7 +104,21 @@
     export default {
         mounted() {
             console.log('Component mounted.')
-        }
+        },
+        methods: {
+            onSubmit: function () {
+            this.$refs.invisibleRecaptcha.execute()
+            },
+            onVerify: function (response) {
+            console.log('Verify: ' + response)
+            },
+            onExpired: function () {
+            console.log('Expired')
+            },
+            resetRecaptcha() {
+            this.$refs.recaptcha.reset() // Direct call reset method
+            },
+        },
     }
 </script>
 <style>
