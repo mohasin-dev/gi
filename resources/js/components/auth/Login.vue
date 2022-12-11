@@ -1,7 +1,7 @@
 <template>
     <v-container :fluid="true">
         <v-row>
-            <v-col col="12" md="6">
+            <v-col cols="12" md="6">
                 <div class="login-left mt-7 px-md-10 px-sm-10 px-xs-5 pt-12">
                     <v-card width="90%" class="mx-auto" style="box-shadow: none;">
                         <v-card-text>
@@ -79,7 +79,7 @@
                 </div>
 
             </v-col>
-            <v-col col="12" md="6" style="padding:0!important">
+            <v-col cols="12" md="6" style="padding:0!important">
                 <div class="d-flex login-right" style="align-items: center;height: 100%;justify-content: center;">
                     <div class="logo-powered-by text-uppercase" style="position: relative;">
                         <p class="powerby-text">powerd by</p>

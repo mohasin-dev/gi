@@ -1,3 +1,249 @@
-/**
- * All the responsive styles
- */
+/* responsive */
+/* register */
+/* register */
+/* end responsive */
+@media (max-width:959px) and (min-width:600px) {
+    body{
+        padding:0;
+    }
+}
+@media (max-width:959px) and (min-width:600px) {
+	.form-section {
+		max-width: 80%;
+        .step3-form {
+            padding: 10px;
+        }
+	}
+	.step-container {
+		.step-reg {
+			&:first-child {
+				width: 125px;
+				height: 80px;
+				padding: 5px 0px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				&::before {
+                    width: 121px;
+                    height: 76px;
+                    top: 2px;
+                    left: 2px;
+				}
+			}
+			padding: 5px 0px;
+			width: 125px;
+			height: 80px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			&::before {
+                width: 121px;
+                height: 76px;
+                top: 2px;
+                left:2px;
+			}
+			p {
+				&:first-child {
+					font-size: 15px;
+				}
+				&:last-child {
+					font-size: 12px;
+				}
+			}
+		}
+        .step-reg.step-active{
+            &::before {
+                width: 118px;
+                height: 72px;
+                top: 4px;
+                left: 4px;
+            }
+        }
+	}
+	.step2-form {
+		.v-input__details {
+			display: none;
+		}
+		.v-col-12 {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+	
+	.trade-option {
+		.v-input {
+			padding: 0px 35px;
+		}
+	}
+	.step4-container {
+		margin: 0 20px !important;
+	}
+}
+@media (max-width:600px) {
+	.logo-powered-by {
+		.company-text {
+			font-size: 45px;
+			font-weight: 500;
+			font-family: auto;
+			padding-right: 5px;
+		}
+	}
+	.company-slogan-text {
+		font-weight: 400;
+		padding-top: 15px;
+		padding-left: 10px;
+		line-height: 1;
+		position: relative;
+		font-size: 13px;
+	}
+	.powerby-text {
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		left: 0;
+		font-size: 10px;
+		top: -2%;
+	}
+	.top-logo {
+		.logo {
+			img {
+				height: 35px;
+				padding-left: 20px;
+			}
+		}
+	}
+	.form-section {
+		max-width: 80%;
+		padding: 10px;
+	}
+	.step-container {
+		.step-reg {
+			&:first-child {
+				width: 80px;
+				height: 80px;
+				padding: 5px 0px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				&::before {
+					width: 78px;
+					height: 78px;
+				}
+			}
+			padding: 5px 0px;
+			width: 80px;
+			height: 80px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			&::before {
+				width: 78px;
+				height: 78px;
+			}
+			p {
+				&:first-child {
+					font-size: 15px;
+				}
+				&:last-child {
+					font-size: 12px;
+				}
+			}
+		}
+        .step-reg.step-active{
+            &::before {
+                width: 72px;
+                height: 72px;
+                top: 4px;
+                left: 4px;
+            }
+        }
+	}
+	.g_h_capt {
+		div {
+			&:first-child {
+				width: 100% !important;
+				div {
+					&:first-child {
+						iframe {
+							&:first-child {
+								width: 100% !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.rc-anchor-pt {
+		display: none;
+	}
+	.step2-form {
+		.v-input__details {
+			display: none;
+		}
+		.v-col-12 {
+			padding: 0;
+		}
+	}
+	.trade-option {
+		.trade-switch {
+			.v-switch__track {
+				border-radius: 9px !important;
+				height: 20px !important;
+				width: 33px !important;
+				background-color: #97b3d7;
+			}
+		}
+		.v-input {
+			padding: 0px 5px;
+		}
+	}
+	.v-switch {
+		.v-label {
+			font-size: 12px;
+		}
+	}
+	.custom-title {
+		font-size: 11px;
+	}
+	.step4-container {
+		margin: 0 20px !important;
+	}
+	.form-step4-section {
+		.back-button {
+			padding: 5px 10px;
+			font-size: 11px;
+		}
+		.next-button {
+			padding: 5px 1px !important;
+			.v-btn__content {
+				font-size: 11px;
+			}
+		}
+	}
+	.login-left {
+		.top-logo {
+			h2 {
+				letter-spacing: 3px;
+			}
+		}
+	}
+	.login-right {
+		.company-slogan-text {
+			font-size: 21px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			line-height: 18.5px;
+			padding-top: 21px;
+		}
+		.logo-powered-by {
+			.company-text {
+				font-size: 61px;
+				font-weight: 500;
+				font-family: auto;
+				padding-right: 0px;
+			}
+			padding-top: 15px;
+		}
+	}
+}
