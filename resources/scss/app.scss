@@ -410,12 +410,38 @@ div[aria-required=true].v-input {
 	font-size: 14px;
 	margin: 10px 0;
 }
+.step4-3{
+	.question-container{
+		border: 1px solid #bdbdbd;
+		padding: 10px;
+		.v-textarea{
+			padding-top: 10px;
+			.v-field__input{
+				border: 1px solid;
+				-webkit-mask-image: none;
+				padding: 10px;
+				font-size: 12px;
+			}
+		}
+		.question-block {
+			padding: 0;
+			border: 0;
+			margin: 0;
+		}
+	}
+}
 .question-block {
 	padding: 15px 10px;
 	font-size: 13px;
 	margin: 10px 0;
 	border: 1px solid #bdbdbd;
 	align-items: center;
+	.v-row{
+		margin: 0;
+		.v-col-12{
+			padding: 0;
+		}
+	}
 	.v-input__details {
 		display: none;
 	}

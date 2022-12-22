@@ -80,17 +80,19 @@
                             <p class="pl-3">Sucess</p>
                         </div>
                     </v-col>
-                    <v-col cols="12" md="9" class="step4-right" :class="subStep == 1 ? 'show-section' : 'hide-section'">
+                    <v-col cols="12" md="9" class="step4-right" :class="(subStep == 1 || subStep == 0)  ? 'show-section' : 'hide-section'">
                         <div class="step4-title">
                             <h3>Responsible Contractor Entry Survey - <span>Policy</span></h3>
                         </div>
                         <div class="step4-content-container">
                             <v-card
-                            
+                                id="step4-first-scrollbar"
                                 class="overflow-y-auto"
                                 max-height="400"
                             >
-                                <v-card-text>
+                                <v-card-text
+                                v-scroll:#step4-first-scrollbar="onScroll"
+                                >
                                     <div class="policy-title1">
                                         <h3>Responsible Contractor Program & SDVBE Program</h3>
                                     </div>
@@ -154,16 +156,19 @@
                         <div class="policy-footer">
                             <v-radio-group
                                 v-model="policyAgree"
+                               :disabled="disabledPolicyAgree"
                                 column
                                 >
                                     <v-radio
                                         label="I will not agree to work under the terms of the polices above."
                                         color="cus-color"
                                         value="no"
+                                        @click='changePolicy("no")'
                                     ></v-radio>
                                     <v-radio
                                     label="I have read, understand and will agree to work under the terms of the polices above."
                                     color="cus-color"
+                                    @click='changePolicy("yes")'
                                     value="yes"
                                 ></v-radio>
                             </v-radio-group>
@@ -188,6 +193,7 @@
                                     <v-btn
                                     class="next-button"
                                     color="blue-grey"
+                                    :disabled="disableNext"
                                     @click="subStep++"
                                     >
                                         Next
@@ -209,14 +215,18 @@
                                     <div class="question-title">
                                         <p>Please read and answer following questions below.</p>
                                     </div>
-                                <div class="question-block d-flex justify-space-between">
-                                        <p>I read responsible contractor program policy :</p>
-                                        <div >
-                                        <v-radio-group inline>
-                                            <v-radio height="20px" width="20px" label="Yes" value="1"></v-radio>
-                                            <v-radio label="No" value="0"></v-radio>
-                                        </v-radio-group>
-                                        </div>
+                                <div class="question-block">
+                                    <v-row class="justify-space-between">
+                                        <v-col cols="12" md="9">
+                                            <p>I read responsible contractor program policy :</p>
+                                        </v-col>
+                                        <v-col cols="12" md="3">
+                                            <v-radio-group inline>
+                                                <v-radio height="20px" width="20px" label="Yes" value="1"></v-radio>
+                                                <v-radio label="No" value="0"></v-radio>
+                                            </v-radio-group>
+                                        </v-col>
+                                    </v-row>    
                                 </div>  
                                 </v-card-text>
                             </v-card>
@@ -263,7 +273,7 @@
                                 class="overflow-y-auto"
                                 max-height="400"
                             >
-                                <v-card-text>
+                                <v-card-text class="step4-3">
                                     <div class="question-title">
                                         <p>Please read and answer following questions below.</p>
                                     </div>
@@ -272,15 +282,32 @@
                                             The responsible contractor program encourages fair wages and benefits, consistent with local market practices.
                                             Please take a few minutes to complete the following questions about your firm and the marketplace in which you operate.</p>
                                     </div>
-                                <div class="question-block d-flex justify-space-between">
-                                        <p>I read responsible contractor program policy :</p>
-                                        <div >
-                                        <v-radio-group inline>
-                                            <v-radio height="20px" width="20px" label="Yes" value="1"></v-radio>
-                                            <v-radio label="No" value="0"></v-radio>
-                                        </v-radio-group>
+                                    <div class="question-container">
+                                        <div class="question-block ">
+                                            <v-row class="justify-space-between">
+                                                <v-col cols="12" md="9">
+                                                    <p>I read responsible contractor program policy :</p>
+                                                </v-col>
+                                                <v-col cols="12" md="3">
+                                                    <v-radio-group inline>
+                                                        <v-radio height="20px"  @click='showQ1=true' width="20px" label="Yes" value="1"></v-radio>
+                                                        <v-radio label="No"  @click='showQ1=false' value="0"></v-radio>
+                                                    </v-radio-group>
+                                                </v-col>
+                                            </v-row>
+                                            
+                                            
                                         </div>
-                                </div>  
+                                        <v-textarea
+                                        v-show="showQ1"
+                                        solo
+                                        hide-details
+                                        placeholder="please provide details. (required)"
+                                        rows="1"
+                                        name="input-7-4"
+                                        ></v-textarea>
+                                    </div>
+                                      
                                 </v-card-text>
                             </v-card>
                         </div>
@@ -328,11 +355,37 @@
         data () {
             return {
                 step:4,
-                subStep:1,
-                policyAgree: 'yes',
+                subStep:0,
+                policyAgree: 'no',
+                disabledPolicyAgree:true,
+                hasScrolledToBottom:true,
+                disableNext:true,
                 valid: false,
                 switch1: true,
                 switch2: false,
+
+                showQ1:false
+            }
+        },
+        methods:{
+            changePolicy(arg){
+                if(arg =="yes"){
+                    this.disableNext=false;
+                }else{
+                    this.disableNext=true;
+                }
+            },
+            onScroll(e){
+                if((e.target.offsetHeight + e.target.scrollTop) >= e.target.scrollHeight) {
+                    this.disabledPolicyAgree = false;
+                    this.subStep=1;
+                }
+            },
+            showInputAnswer(arg,arg2){
+                console.log(arg);
+                var q_a='showQ'+arg2;
+                console.log(this.q_a);
+                console.log(q_a);
             }
         }
     }
